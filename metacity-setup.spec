@@ -1,15 +1,16 @@
 Summary:	Metacity window manager configuration program
-Summary(pl):	Program konfiguracyjny zarz±dcy okien Metacity
 Name:		metacity-setup
-Version:	0.6
-Release:	4
+Version:	0.6.1
+Release:	1
 License:	GPL
-Group:		X11/Window Managers
-Source0:	%{name}-%{version}.tar.bz2
+Group:		X11/Applications
+Source0:	http://plastercast.tzo.com/~plastercast/Projects/%{name}-%{version}.tar.gz
 URL:		http://plastercast.tzo.com/~plastercast/Projects/
-BuildRequires:	libgnomeui2-devel
+BuildRequires:	libgnomeui-devel
 Requires:	metacity
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix  /usr/X11R6/bin
 
 %description
 metacity-setup is simply a much easier way to configure Metacity then
@@ -31,12 +32,8 @@ wirtualnych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
 
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{_bindir}/%name" icon="%{_datadir}/pixmaps/metacity-setup-icon.png" longtitle="Metacity Window Manager Properties" title="Metacity-Setup" needs=gnome section="Configuration/GNOME"
-EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
