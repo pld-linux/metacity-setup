@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://unc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	e898a13ea95d38dcc1f9dba5dd03581f
 URL:		http://sourceforge.net/projects/metacity-setup/
 BuildRequires:	GConf2-devel >= 1.2.0
 BuildRequires:	gnome-vfs2-devel >= 2.0.1
