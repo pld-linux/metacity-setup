@@ -1,5 +1,5 @@
 Summary:	Metacity window manager configuration program
-Summary(pl):	Program konfiguracyjny dla mened¿era okien Metacity
+Summary(pl):	Program konfiguracyjny dla zarz±dcy okien Metacity
 Name:		metacity-setup
 Version:	0.7.1
 Release:	1
