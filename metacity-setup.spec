@@ -6,11 +6,17 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://plastercast.tzo.com/~plastercast/Projects/%{name}-%{version}.tar.gz
 URL:		http://plastercast.tzo.com/~plastercast/Projects/
-BuildRequires:	libgnomeui-devel
+BuildRequires:	GConf2-devel >= 1.2.0
+BuildRequires:	gnome-vfs2-devel >= 2.0.1
+BuildRequires:	gtk+2-devel >= 2.0.5 
+BuildRequires:	intltool
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnomeui-devel >= 2.0.0
+BuildRequires:	pkgconfig
 Requires:	metacity
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix  /usr/X11R6/bin
+%define		_prefix  /usr/X11R6
 
 %description
 metacity-setup is simply a much easier way to configure Metacity then
@@ -47,4 +53,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/metacity-setup/pixmaps
 %{_datadir}/metacity-setup/pixmaps/metacity-setup-icon.png
 %{_datadir}/control-center-2.0/capplets/metacity-setup.desktop
-%{_menudir}/%{name}
