@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-themes_path.patch
 URL:		http://sourceforge.net/projects/metacity-setup/
 BuildRequires:	GConf2-devel >= 1.2.0
+BuildRequires:	autoconf
 BuildRequires:	gnome-vfs2-devel >= 2.0.1
 BuildRequires:	gtk+2-devel >= 2.0.5
 BuildRequires:	intltool
@@ -41,8 +42,9 @@ wirtualnych.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
 
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
