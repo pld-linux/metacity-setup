@@ -1,62 +1,53 @@
-Summary: Metacity window manager configuration program
-Name: metacity-setup
-Version: 0.6
-Release: 3mdk
-Source0: %{name}-%{version}.tar.bz2
-License: GPL
-Group: Graphical desktop/GNOME
-BuildRoot: %{_tmppath}/%{name}-buildroot
-Prefix: %{_prefix}
-URL: http://plastercast.tzo.com/~plastercast/Projects/
-Requires: metacity
-BuildRequires: libgnomeui2-devel 
+Summary:	Metacity window manager configuration program
+Summary(pl):	Program konfiguracyjny zarz±dcy okien Metacity
+Name:		metacity-setup
+Version:	0.6
+Release:	4
+License:	GPL
+Group:		X11/Window Managers
+Source0:	%{name}-%{version}.tar.bz2
+URL:		http://plastercast.tzo.com/~plastercast/Projects/
+BuildRequires:	libgnomeui2-devel
+Requires:	metacity
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 metacity-setup is simply a much easier way to configure Metacity then
 having to use gconftool or gconf-editor. It allows you to change
 themes, focus settings, and the number of workspaces.
 
+%description -l pl
+U¿ycie metacity-setup jest du¿o prostszym sposobem na skonfigurowanie
+Metacity ni¿ u¿ywanie gconftoola lub gconf-editora. metacity-setup
+pozwala na zmianê motywów, ustawieñ focusa i liczby ekranów
+wirtualnych.
 
 %prep
 %setup -q
 
 %build
 %configure
-%make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name} 
+%makeinstall
+
+install -d $RPM_BUILD_ROOT%{_menudir}
+cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
 ?package(%{name}): command="%{_bindir}/%name" icon="%{_datadir}/pixmaps/metacity-setup-icon.png" longtitle="Metacity Window Manager Properties" title="Metacity-Setup" needs=gnome section="Configuration/GNOME"
 EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%{update_menus}
-
-%postun
-%{clean_menus}
-
-
 %files
-%defattr(-,root,root)
+%defattr(644,root,root,755)
 %doc README AUTHORS ChangeLog
-%_bindir/metacity-setup
-%_datadir/pixmaps/metacity-setup-icon.png
-%_datadir/metacity-setup/pixmaps/metacity-setup-icon.png
-%_datadir/control-center-2.0/capplets/metacity-setup.desktop
-%_menudir/%name
-
-%changelog
-* Mon Jul 22 2002 Frederic Crozat <fcrozat@mandrakesoft.com> 0.6-3mdk
-- Fix menu entry
-
-* Tue Jul 09 2002 Lenny Cartier <lenny@mandrakesoft.com> 0.6-2mdk
-- buildrequires libgtk+-x11-2.0_0-devel
-
-* Tue Jul  2 2002 Götz Waschk <waschk@linux-mandrake.com> 0.6-1mdk
-- initial package
+%{_bindir}/metacity-setup
+%{_pixmapsdir}/metacity-setup-icon.png
+%dir %{_datadir}/metacity-setup
+%dir %{_datadir}/metacity-setup/pixmaps
+%{_datadir}/metacity-setup/pixmaps/metacity-setup-icon.png
+%{_datadir}/control-center-2.0/capplets/metacity-setup.desktop
+%{_menudir}/%{name}
