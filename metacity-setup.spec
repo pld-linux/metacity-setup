@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README AUTHORS ChangeLog
-%{_bindir}/metacity-setup
+%attr(755,root,root) %{_bindir}/*
 %{_pixmapsdir}/metacity-setup-icon.png
 %dir %{_datadir}/metacity-setup
 %dir %{_datadir}/metacity-setup/pixmaps
