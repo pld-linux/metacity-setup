@@ -10,7 +10,7 @@ Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/metacity-setup/
 BuildRequires:	GConf2-devel >= 1.2.0
 BuildRequires:	gnome-vfs2-devel >= 2.0.1
-BuildRequires:	gtk+2-devel >= 2.0.5 
+BuildRequires:	gtk+2-devel >= 2.0.5
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
