@@ -1,0 +1,12 @@
+diff -aurN metacity-setup-0.7.1.orig/src/callbacks.c metacity-setup-0.7.1/src/callbacks.c
+--- metacity-setup-0.7.1.orig/src/callbacks.c	2002-08-28 03:06:25.000000000 +0200
++++ metacity-setup-0.7.1/src/callbacks.c	2003-09-12 16:48:03.000000000 +0200
+@@ -234,7 +234,7 @@
+ 						G_FILE_TEST_IS_DIR) &&
+ 					(g_file_test
+ 						(g_build_filename
+-							(possibleThemeDirs[i], filename, "metacity-theme-1.xml", NULL),
++							(possibleThemeDirs[i], filename, "metacity-1/metacity-theme-1.xml", NULL),
+ 						G_FILE_TEST_IS_REGULAR)))
+ 					{
+ 						g_ptr_array_add (themeNameHolder,
