@@ -2,7 +2,7 @@ Summary:	Metacity window manager configuration program
 Summary(pl):	Program konfiguracyjny dla zarz±dcy okien Metacity
 Name:		metacity-setup
 Version:	0.7.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://unc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
@@ -16,8 +16,6 @@ BuildRequires:	libgnomeui-devel >= 2.0.0
 BuildRequires:	pkgconfig
 Requires:	metacity
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix  /usr/X11R6
 
 %description
 metacity-setup is simply a much easier way to configure Metacity then
