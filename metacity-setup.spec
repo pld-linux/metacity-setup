@@ -1,7 +1,8 @@
 Summary:	Metacity window manager configuration program
+Summary(pl):	Program konfiguracyjny dla mened¿era okien Matacity
 Name:		metacity-setup
 Version:	0.6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://plastercast.tzo.com/~plastercast/Projects/%{name}-%{version}.tar.gz
