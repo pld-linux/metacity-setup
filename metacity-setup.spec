@@ -1,5 +1,5 @@
 Summary:	Metacity window manager configuration program
-Summary(pl):	Program konfiguracyjny dla zarz±dcy okien Metacity
+Summary(pl.UTF-8):   Program konfiguracyjny dla zarzÄ…dcy okien Metacity
 Name:		metacity-setup
 Version:	0.7.1
 Release:	4
@@ -25,10 +25,10 @@ metacity-setup is simply a much easier way to configure Metacity then
 having to use gconftool or gconf-editor. It allows you to change
 themes, focus settings, and the number of workspaces.
 
-%description -l pl
-U¿ycie metacity-setup jest du¿o prostszym sposobem na skonfigurowanie
-Metacity ni¿ u¿ywanie gconftoola lub gconf-editora. metacity-setup
-pozwala na zmianê motywów, ustawieñ focusa i liczby ekranów
+%description -l pl.UTF-8
+UÅ¼ycie metacity-setup jest duÅ¼o prostszym sposobem na skonfigurowanie
+Metacity niÅ¼ uÅ¼ywanie gconftoola lub gconf-editora. metacity-setup
+pozwala na zmianÄ™ motywÃ³w, ustawieÅ„ focusa i liczby ekranÃ³w
 wirtualnych.
 
 %prep
